@@ -1,13 +1,11 @@
-// script.js - safer version with debug output and sample fallback
 
 const holidayList = document.getElementById('holiday-list');
 const monthSelect = document.getElementById('month-select');
 const themeToggle = document.getElementById('theme-toggle');
 
-// global store
+
 let allHolidays = [];
 
-// sample fallback data (so UI works even if fetch fails)
 const sampleHolidays = [
   { date: "2025-01-01", localName: "New Year's Day", name: "New Year's Day" },
   { date: "2025-03-10", localName: "Independence Day (example)", name: "Independence Day" },
@@ -18,10 +16,9 @@ function setStatus(msgHtml) {
   holidayList.innerHTML = `<p>${msgHtml}</p>`;
 }
 
-// show loading while we try fetch
+
 setStatus('Loading holidays...');
 
-// Try to fetch real data from Nager.Date
 function fetchHolidays() {
   const url = 'https://date.nager.at/api/v3/PublicHolidays/2025/KE';
   console.log('Fetching holidays from:', url);
@@ -38,16 +35,16 @@ function fetchHolidays() {
       renderHolidays(allHolidays);
     })
     .catch(err => {
-      // show the error clearly in console and on page
+      
       console.error('Fetch failed:', err);
       setStatus('Failed to load holidays from the network. Using sample data below.');
-      // fallback to sample data so filters can be tested
+      
       allHolidays = sampleHolidays;
       renderHolidays(allHolidays);
     });
 }
 
-// render array of holiday objects
+
 function renderHolidays(list) {
   holidayList.innerHTML = '';
   if (!list || list.length === 0) {
@@ -68,7 +65,7 @@ function renderHolidays(list) {
   });
 }
 
-// filter handler
+
 monthSelect.addEventListener('change', (e) => {
   const val = e.target.value;
   if (val === 'all') {
@@ -83,10 +80,10 @@ monthSelect.addEventListener('change', (e) => {
   }
 });
 
-// theme toggle
+
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
 
-// start
+
 fetchHolidays();
