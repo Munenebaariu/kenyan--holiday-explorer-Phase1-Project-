@@ -1,0 +1,80 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  background-color: #007b5e;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#theme-toggle {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: white;
+  color: #007b5e;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+#filters {
+  padding: 1rem;
+  background-color: #eaf6f0;
+}
+
+#month-select {
+  padding: 0.4rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+#holiday-list {
+  padding: 1rem;
+}
+
+.holiday {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode header {
+  background-color: #222;
+}
+
+.dark-mode .holiday {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.dark-mode #theme-toggle {
+  background-color: #007b5e;
+  color: white;
+}

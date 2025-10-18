@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kenyan Holiday Explorer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🇰🇪 Kenyan Holiday Explorer</h1>
+      <button id="theme-toggle">Switch to Dark Mode</button>
+    </header>
+
+    <section id="filters">
+      <label for="month-select">Filter by month:</label>
+      <select id="month-select">
+        <option value="all">All</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+    </section>
+
+    <main id="holiday-list">
+      <p>Loading holidays...</p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
